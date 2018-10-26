@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import LandingPage from '@pages/LandingPage';
+import ParallaxBackground from '@components/ParallaxBackground';
+import ScrollTop from '@components/ScrollTop';
+import ThemeSwitcher from '@components/ThemeSwitcher';
+import Browser from '@components/Browser';
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <h1>Under construction</h1>
+      <div className="dev-landing-page">
+        <ThemeSwitcher>
+          <Browser except firefox>
+            <ParallaxBackground />
+          </Browser>
+          <LandingPage />
+          <ScrollTop />
+        </ThemeSwitcher>
       </div>
     );
   }
